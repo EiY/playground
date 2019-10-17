@@ -11,16 +11,16 @@ openssl_public_encrypt(
   ] ) ) );
 
 curl_setopt_array( $ch = curl_init(), [
-  CURLOPT_URL					=>	'https://target.api.com',
-  CURLOPT_SSL_VERIFYPEER		=>	0,
-  CURLOPT_SSL_VERIFYHOST		=>	0,
-  CURLOPT_RETURNTRANSFER		=>	1,
-  CURLOPT_TIMEOUT				=>	5,
-  CURLOPT_HTTPHEADER	   	    =>	[
+  CURLOPT_URL                   =>  'https://target.api.com',
+  CURLOPT_SSL_VERIFYPEER        =>  0,
+  CURLOPT_SSL_VERIFYHOST        =>  0,
+  CURLOPT_RETURNTRANSFER        =>  1,
+  CURLOPT_TIMEOUT               =>  5,
+  CURLOPT_HTTPHEADER            =>  [
     'Signature: ' . base64_encode( $signature ),
     "Timestamp: $ts"
   ],
-  CURLOPT_USERAGENT				=>	'Mozilla/5.0 (compatible; +https://www.mysite.com/)'
+  CURLOPT_USERAGENT             =>  'Mozilla/5.0 (compatible; +https://www.mysite.com/)'
 ]);
 
 $ret = curl_exec( $ch );
