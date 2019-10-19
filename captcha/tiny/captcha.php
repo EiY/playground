@@ -24,7 +24,7 @@ $captcha = new class implements captcha {
       );
 
     for ( $i = 0; $i < 50; ++ $i )
-      imagesetpixel( $im, mt_rand( 0, $width - 1 ), mt_rand( 0, $height - 1 ),
+      imagesetpixel( $im, mt_rand( 0, $mw ), mt_rand( 0, $mh ),
         imagecolorallocate( $im, mt_rand( 57, 197 ), mt_rand( 57, 197 ), mt_rand( 57, 197 ) ) 
       );
 
