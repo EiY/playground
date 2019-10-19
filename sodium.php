@@ -1,4 +1,6 @@
 <?php
+/*  https://www.zend.com/blog/modern-cryptography-php-72-sodium  */
+
 # substr( sodium_crypto_box_keypair(), 0, 32 );
 # sodium_crypto_box_secretkey( sodium_crypto_box_keypair() );
 # sodium_crypto_auth_keygen(); // ?
