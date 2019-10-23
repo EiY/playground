@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>in development</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Inconsolata);
+      html,body{background:rgb(22,22,22);font-family:'Inconsolata',sans-serif}
+      .wrap{top:50%;left:50%;width:400px;height:200px;margin-left:-200px;margin-top:-100px;position:absolute}
+      code{color:white}
+      span.blue{color:#48beef}
+      span.comment{color:#7f8c8d}
+      span.load{color:#f39c12}
+    </style>
+  </head>
+  <body>
+    <div class="wrap"><pre><code>
+      (<span class="blue">function</span>( inDevelopment ) {
+           <span class="blue">function</span> launch() {
+              <span class="blue">if</span>( inDevelopment ) {
+                  <span class="blue">return</span>;
+              }
+              <span class="comment">//TODO</span>
+        }
+      window.addEventListner( <span class="load">'load'</span>, launch );
+      }( <span class="blue">true</span> ));
+    </code></pre></div>
+  </body>
+</html>

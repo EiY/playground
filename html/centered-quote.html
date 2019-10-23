@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>centered quote</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <style>
+      body{min-height:100vh;display:flex;align-items:center;justify-content:center}
+      .wrapper{max-width:600px}
+      p{text-align:left;padding:0 60px;font-family:Georgia,serif;font-size:20px;line-height:2}
+      p:before,p:after{color:#ffcc00;position:absolute;font-size:5em;line-height:0}
+      p:before{content:"„";margin-left:-.5em;margin-top:-.15em}
+      p:after{content:"“";margin-left:.05em;margin-top:.4em}
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+    </div>
+  </body>
+</html>

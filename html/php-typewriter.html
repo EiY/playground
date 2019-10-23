@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>php typewriter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <style>
+      html,body{background:rgb(22,22,22);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:monospace;font-size:13px;font-style:normal;font-variant:normal;font-weight:400;line-height:15px;letter-spacing:1.5px;cursor:context-menu;user-select:none}
+      a{text-decoration:none}
+      .wrap{top:45%;left:45%;width:400px;height:200px;margin-left:-200px;margin-top:-100px;position:absolute}
+      .highLight{display:inline-block}
+      .highLight div{display:inline-block;color:white;overflow:hidden;white-space:nowrap;border-right:1px solid white;width:0;opacity:0}
+      @keyframes typing{from{width:0}to{width:100%}}
+      @keyframes blink{from,to{border-color:transparent}50%{border-color:white}}
+      .variable{color:#616161}
+      .variable2{color:#607d8b}
+      .keyword{color:#6d4c41}
+      .constant{color:#9e9e9e}
+      .docComment{color:#0d47a1}
+      .operator{color:#ff8a65}
+      .comment{color:#33691e}
+      .string{color:#f39c12}
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <pre>
+        <div class="highLight"><div><span class="keyword">class</span> EiY {</div></div>
+        <div class="highLight"><div>&emsp;&emsp;<span class="keyword">public function</span> greeting( <span class="variable">$o</span> ) {</div></div>
+        <div class="highLight"><div>&emsp;&emsp;&emsp;&emsp;<span class="variable">$this</span><span class="operator">-></span><span class="variable2">_say</span>( <span class="string">'Hello '</span> . <span class="variable">$o</span> );</span></div></div>
+        <div class="highLight"><div>&emsp;&emsp;}</div></div>
+        <div class="highLight"><div>&emsp;&emsp;<span class="keyword">private function</span> _say( <span class="variable">$word</span> ) {</div></div>
+        <div class="highLight"><div>&emsp;&emsp;&emsp;&emsp;<span class="keyword">echo</span> <span class="variable">$word</span>;</div></div>
+        <div class="highLight"><div>&emsp;&emsp;}</div></div>
+        <div class="highLight"><div>}</div></div>
+        <div class="highLight"><div><span class="comment">/**</span></div></div>
+        <div class="highLight"><div><span class="comment">&nbsp;* <span class="docComment">@link</span> <a href="https://github.com/EiY" target="_blank">Home</a></span></div></div>
+        <div class="highLight"><div><span class="comment">&nbsp;* <span class="docComment">@todo</span> ..write something that actually make sense.</span></div></div>
+        <div class="highLight"><div><span class="comment">&nbsp;*/</span></div></div>
+        <div class="highLight"><div><span class="variable">$me</span> <span class="operator">=</span> <span class="keyword">new</span> EiY;</div></div>
+        <div class="highLight"><div><span class="variable">$me</span><span class="operator">-></span><span class="variable2">greeting</span>( <span class="string">'GitHub'</span> );</div></div>
+      </pre>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script>
+      var delay = 0;
+      var lines = $(".highLight div").length;
+      console.log( lines );
+      var line = 0;
+      $(".highLight div").each(function () {
+        var count = $(this).text().length;
+        var duration = count / 12;
+        $(this).css({
+          "animation": "typing " + duration + "s steps(" + count + ", end) forwards, blink 1s step-end 1s infinite",
+          "animation-delay": delay + "s" });
+        var that = $(this);
+        setTimeout(function () {
+          that.css('opacity', '1');
+        }, delay * 1000);
+        delay += duration;
+        line += 1;
+        if (line != lines) {
+          setTimeout(function () {
+            that.css('border-right', '0');
+          }, delay * 1000);
+        }
+      });
+    </script>
+  </body>
+</html>
